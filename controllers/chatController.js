@@ -96,6 +96,7 @@ const createGroupChat = asyncHandler(async (req, resp) => {
       isGroupChat:true,
       groupAdmin:req.user,
     })
+    // console.log(groupChat);
 
 //fetch the group chat in database and send back to the user
     const fullGroupChat = await Chat.findOne({ _id:groupChat._id})
@@ -131,6 +132,7 @@ const renameGroup = asyncHandler(async (req, resp) => {
       throw new Error("chat not found")
     } else{
       resp.json(updatedChat)
+      // console.log(updatedChat);
     }
 });
 
